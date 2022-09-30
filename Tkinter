@@ -1,0 +1,55 @@
+import imp
+from struct import pack
+from tkinter import *
+import tkinter
+from turtle import pen
+from tkinter import messagebox
+
+
+win = Tk()
+
+
+def message_box():
+    messagebox.showinfo(title='Info',message='hello')
+
+
+def get_entry():
+    value = name.get()
+    if value:
+        print(value)
+    else:
+        print('nothing')
+
+
+def window():
+    win.title('Регистрация')
+    icon = PhotoImage(file='images/python1.png')
+    win.iconphoto(False, icon)
+    win.geometry("800x500+500+150")
+    # win.resizable(False,False)
+    win.config(bg='#152848')
+def label():
+    label_1= tkinter.Label(win, text='Здраствуйте',bg='#152848',font='Montserrat 24 bold',fg='white',pady=50,).grid(row=0,column=1)
+    label_2= tkinter.Label(win, text='Введите своё имя:',bg='#152848',font='Montserrat 24 bold',fg='white',pady=50).grid(row=1,column=0)
+    
+
+def button():
+    tkinter.Button(win,text='Отправить',command=get_entry,bg='#152848',font='Montserrat 16 bold',fg='white').grid(row=1,column=2)
+
+def Enter():
+    global name
+    name = tkinter.Entry(win,)
+    name.grid(row=1,column=1)
+
+
+
+
+
+
+button()
+Enter()
+get_entry()
+label()
+window()
+message_box()
+win.mainloop()
